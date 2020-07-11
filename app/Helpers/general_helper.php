@@ -211,7 +211,8 @@ function dja_detail(array $col, object $data)
 
 
                 $output .= "<tr><td>$title</td><td class='$_align_value'>$data_value $_unit $_extra</td></tr>";
-            } elseif ($value['type'] == 'link_date') {
+            }
+            elseif ($value['type'] == 'link_date') {
                 if (!in_array('no-format', $value)) {
                     if ($data->$key != '') {
                         $data_value = tgl_indo($data->$key, 'xx');
@@ -232,7 +233,8 @@ function dja_detail(array $col, object $data)
                 }
 
                 $output .= "<tr><td>$title</td><td class='$_align_value'><a href='$_src' target='_blank'>$data_value</a></td></tr>";
-            } elseif ($value['type'] == 'from') {
+            }
+            elseif ($value['type'] == 'from') {
                 if ($data != '') {
                     if (array_key_exists('sub-type', $value)) {
                         if ($value['sub-type'] == 'date') {
@@ -248,7 +250,8 @@ function dja_detail(array $col, object $data)
                 }
 
                 $output .= "<tr><td>$title</td><td class='$_align_value'>$data_value $_unit $_extra</td></tr>";
-            } elseif ($value['type'] == 'option') {
+            }
+            elseif ($value['type'] == 'option') {
                 if ($data->$key != 0) {
                     $data_value = $value['data'][$data->$key];
                 } else {
@@ -337,7 +340,8 @@ function dja_form($col, object $data = NULL)
                     $output .= render_input($key, $title, $data_value, 'text', $group_class, $class);
 
                     // OPTION DROPDOWN
-                } elseif ($value['type'] == 'option') {
+                }
+                elseif ($value['type'] == 'option') {
                     if ($data != '') {
                         $data_value = $data->$key;
                     } else {
@@ -463,4 +467,9 @@ function add_notification($values)
         $builder = $db->table('anggota');
         $builder->where(['id_anggota' => $values['user_notifikasi']])->replace(['anggota_notifikasi' => 1]);
     }
+}
+function get_data_koperasi()
+{
+    $data = file_get_contents('backup_db/pengaturan.json');
+    return json_decode($data, true);
 }

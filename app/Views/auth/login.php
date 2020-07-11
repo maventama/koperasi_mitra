@@ -28,10 +28,13 @@
                     <div class="col-lg-4 mx-auto">
                         <div class="auth-form-light text-left p-5">
                             <div class="brand-logo">
-                                <img src="assets/images/logo.svg">
+                                <center>
+                                    <img src="/uploads/pengaturan/<?= get_data_koperasi()['logo']; ?>" width="100%" class="rounded">
+                                </center>
                             </div>
-                            <h4>Hello! let's get started</h4>
-                            <h6 class="font-weight-light">Sign in to continue.</h6>
+                            <center>
+                                <h6 class="font-weight-light">Sign in to continue.</h6>
+                            </center>
                             <form class="pt-3" method="post" action="" id="login-form">
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-lg" id="gmail_anggota" placeholder="E-mail" name="gmail_anggota">
@@ -47,7 +50,7 @@
                                         <label class="form-check-label text-muted">
                                             <input type="checkbox" class="form-check-input" name="remember"> Keep me signed in </label>
                                     </div>
-                                    <a href="#" class="auth-link text-black">Forgot password?</a>
+                                    <!-- <a href="/password_reset" class="auth-link text-black">Forgot password?</a> -->
                                 </div>
                             </form>
                         </div>

@@ -8,6 +8,16 @@
         </a>
     </li>
 <?php } ?>
+<?php if (has_permission('me', 'view')) { ?>
+    <li class="nav-item <?php if ($menu == 'me') {
+                            echo 'active';
+                        } ?>">
+        <a class="nav-link" href="me">
+            <span class="menu-title">Akun Saya</span>
+            <i class="mdi mdi-account-circle menu-icon"></i>
+        </a>
+    </li>
+<?php } ?>
 <?php if (has_permission('anggota', 'view')) { ?>
     <li class="nav-item <?php if ($menu == 'anggota') {
                             echo 'active';
@@ -49,6 +59,16 @@
         <a class="nav-link" href="role">
             <span class="menu-title">Role</span>
             <i class="mdi mdi-key menu-icon"></i>
+        </a>
+    </li>
+<?php } ?>
+<?php if (has_permission('pengaturan', 'view')) { ?>
+    <li class="nav-item <?php if ($menu == 'pengaturan') {
+                            echo 'active';
+                        } ?>">
+        <a class="nav-link" href="pengaturan">
+            <span class="menu-title">Pengaturan</span>
+            <i class="mdi mdi-settings menu-icon"></i>
         </a>
     </li>
 <?php } ?>

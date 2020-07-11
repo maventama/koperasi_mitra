@@ -35,7 +35,9 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <?= $table_anggota; ?>
+                        <div class="table-responsive">
+                            <?= $table_anggota; ?>
+                        </div>
                     </div>
                 </div>
             </div>

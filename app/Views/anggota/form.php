@@ -30,7 +30,6 @@
                                 echo render_input('gmail_anggota', 'Email', $data->gmail_anggota, 'text', '', '', ['required' => true]);
                                 echo render_input('password_anggota', 'Password', '', 'password', '', '', ['placeholder' => 'Kosongkan jika tidak ingin mengubah password']);
                                 echo render_select('jk_anggota', $jk, 'Jenis Kelamin', $data->jk_anggota, '', '', ['required' => true]);
-                                echo render_select('role_anggota', $role, 'Role', $data->role_anggota, '', '', ['required' => true]);
                                 echo render_input('foto_anggota', 'Foto', '', 'file', '', '');
                             } else {
 
@@ -38,7 +37,6 @@
                                 echo render_input('gmail_anggota', 'Email', '', 'text', '', '', ['required' => true]);
                                 echo render_input('password_anggota', 'Password', '', 'password', '', '', ['required' => true]);
                                 echo render_select('jk_anggota', $jk, 'Jenis Kelamin', '', '', '', ['required' => true]);
-                                echo render_select('role_anggota', $role, 'Role', '', '', '', ['required' => true]);
                                 echo render_input('foto_anggota', 'Foto', '', 'file', '', '');
                             } ?>
                             <button type="submit" class="btn btn-primary">

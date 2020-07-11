@@ -104,10 +104,12 @@ class Role extends BaseController
             'data_lain' => [
                 'modul' => [
                     'dashboard' => 'Dashboard',
+                    'me' => 'Akun',
                     'anggota' => 'Anggota',
                     'iuran_wajib' => 'Iuran Wajib',
                     'peminjaman' => 'Peminjaman',
-                    'role' => 'Role'
+                    'role' => 'Role',
+                    'pengaturan' => 'Pengaturan',
                 ]
             ]
         ];

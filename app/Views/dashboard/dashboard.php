@@ -11,6 +11,31 @@
         </ul>
     </nav>
 </div>
+<?php if (get_data_user()->role_anggota == 3) { ?>
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h3>
+                        Hai, <?= get_data_user()->nama_anggota; ?>
+                    </h3>
+                    <div class="row">
+                        <div class="col-md-6 mt-3">
+                            <a href="/iuran_wajibku" class="btn btn-block btn-gradient-primary">
+                                Iuran Wajibku <i class="mdi mdi-dns menu-icon"></i>
+                            </a>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <a href="/peminjaman" class="btn btn-block btn-gradient-primary">
+                                Peminjamanku <i class="mdi mdi-book menu-icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } ?>
 <?php if (get_data_user()->role_anggota == 2 || is_admin(get_data_user()->id_anggota)) { ?>
     <div class="row">
         <div class="col-md-6 stretch-card grid-margin">
@@ -68,31 +93,6 @@
                     </div>
                     <h4 class="card-title">Doughnut chart</h4>
                     <canvas id="doughnutChart" style="height: 230px; display: block; width: 461px;" width="461" height="230" class="chartjs-render-monitor"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
-<?php } ?>
-<?php if (get_data_user()->role_anggota == 3) { ?>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-body">
-                    <h3>
-                        Hai, <?= get_data_user()->nama_anggota; ?>
-                    </h3>
-                    <div class="row">
-                        <div class="col-md-6 mt-3">
-                            <a href="/iuran_wajibku" class="btn btn-block btn-gradient-primary">
-                                Iuran Wajibku <i class="mdi mdi-dns menu-icon"></i>
-                            </a>
-                        </div>
-                        <div class="col-md-6 mt-3">
-                            <a href="/peminjaman" class="btn btn-block btn-gradient-primary">
-                                Peminjamanku <i class="mdi mdi-book menu-icon"></i>
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
