@@ -19,7 +19,6 @@ class Auth extends BaseController
             return redirect()->route('dashboard');
         }
         helper('cookie');
-
         return view('auth/login');
     }
     public function login()
@@ -100,10 +99,10 @@ class Auth extends BaseController
                 $config['wordWrap'] = true;
 
                 $email->initialize($config);
-                $email->send();
-                echo '<pre>';
-                var_dump($email->printDebugger());
-                die;
+                // $email->send();
+                // echo '<pre>';
+                // var_dump($email->printDebugger());
+                // die;
                 alertBootstrap([
                     'type' => 'success',
                     'name' => 'alert-set-password',
