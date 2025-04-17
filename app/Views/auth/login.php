@@ -34,7 +34,7 @@
 
                             <center>
                                 <h1 class="font-weight-light">
-                                    Login Koperasi Mitra
+                                    Login
                                 </h1>
                             </center>
                             <form class="pt-3" method="post" action="" id="login-form">
