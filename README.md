@@ -1,57 +1,107 @@
-# CodeIgniter 4 Framework
+<!-- logo -->
+![Logo](https://raw.githubusercontent.com/maventama/koperasi_mitra/main/public/assets/images/logo.svg)
 
-## What is CodeIgniter?
+# Koperasi Mitra Open Source
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible, and secure. 
-More information can be found at the [official site](http://codeigniter.com).
+<!-- badges -->
+![GitHub issues](https://img.shields.io/github/issues/maventama/koperasi_mitra)
+![GitHub forks](https://img.shields.io/github/forks/maventama/koperasi_mitra)
+![GitHub stars](https://img.shields.io/github/stars/maventama/koperasi_mitra)
+![GitHub license](https://img.shields.io/github/license/maventama/koperasi_mitra)
+![GitHub last commit](https://img.shields.io/github/last-commit/maventama/koperasi_mitra)
+![GitHub contributors](https://img.shields.io/github/contributors/maventama/koperasi_mitra)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/maventama/koperasi_mitra)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/maventama/koperasi_mitra)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/maventama/koperasi_mitra)
+![GitHub repo size](https://img.shields.io/github/repo-size/maventama/koperasi_mitra)
+![GitHub language count](https://img.shields.io/github/languages/count/maventama/koperasi_mitra)
 
-This repository holds the distributable version of the framework,
-including the user guide. It has been built from the 
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## Topik
+- [Koperasi Mitra Open Source](#koperasi-mitra-open-source)
+- [Topik](#topik)
+- [Instalasi](#instalasi)
+- [Apa itu Koperasi Mitra?](#apa-itu-koperasi-mitra)
+- [Database Requirements](#database-requirements)
+- [PHP Requirements](#php-requirements)
+- [Kontribusi](#kontribusi)
+- [Lisensi](#lisensi)
 
-More information about the plans for version 4 can be found in [the announcement](http://forum.codeigniter.com/thread-62615.html) on the forums.
+## Installasi
+Untuk menginstal aplikasi Koperasi Mitra, ikuti langkah-langkah berikut:
+1. **Clone repositori ini**:
+   ```bash
+   git clone https://github.com/maventama/koperasi_mitra
+    ```
+2. **Masuk ke direktori proyek**:
+    ```bash
+    cd koperasi_mitra
+    ```
+3. **Instal dependensi menggunakan Composer**:
+    ```bash
+    composer install
+    ```
+4. **Ganti konfigurasi app/Config/Database.php**:
+    ```php
+    public $default = [
+        'DSN'      => '',
+        'hostname' => '127.0.0.1',
+        'username' => 'root',
+        'password' => '',
+        'database' => 'koperasi_mitra',
+        'DBDriver' => 'MySQLi',
+        'DBPrefix' => '',
+        'pConnect' => false,
+        'DBDebug'  => (ENVIRONMENT !== 'production'),
+        'cacheOn'  => false,
+        'cacheDir' => '',
+        'charset'  => 'utf8',
+        'DBCollat' => 'utf8_general_ci',
+        'swapPre'  => '',
+        'encrypt'  => false,
+        'compress' => false,
+        'strictOn' => false,
+        'failover' => [],
+        'port'     => 3357,
+    ];
+    ```
+5. **Buat database**:
+    ```sql
+    CREATE DATABASE koperasi_mitra;
+    ```
 
-The user guide corresponding to this version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/). 
+6. **Import database dari koperasi.sql**:
+    ```sql
+    USE koperasi_mitra;
+    SOURCE koperasi.sql;
+    ```
+7. **Ganti konfigurasi app/Config/App.php**:
+    ```php
+    public $baseURL = 'http://localhost:8080/';
+    ```
 
+## Apa itu Koperasi Mitra?
+Koperasi Mitra adalah aplikasi berbasis web yang dirancang untuk membantu pengelolaan koperasi simpan pinjam. Aplikasi ini ditujukan untuk mempermudah anggota koperasi dalam melakukan transaksi, memantau saldo, dan mengelola pinjaman.
 
-## Important Change with index.php
+## Database Requirements
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+Koperasi Mitra membutuhkan database MySQL. Versi minimum yang dibutuhkan adalah 5.7.0, tetapi disarankan untuk menggunakan versi stabil terbaru dari MySQL atau MariaDB.
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+## PHP Requirements
 
-**Please** read the user guide for a better explanation of how CI4 works!
-The user guide updating and deployment is a bit awkward at the moment, but we are working on it!
-
-## Repository Management
-
-We use Github issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script. 
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Contributing
-
-We welcome contributions from the community.
-
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/contributing.md) section in the development repository.
-
-## Server Requirements
-
-PHP version 7.2 or higher is required, with the following extensions installed: 
+Diperlukan PHP versi 7.2 atau lebih tinggi, dengan ekstensi berikut yang sudah terinstal: 
 
 - [intl](http://php.net/manual/en/intl.requirements.php)
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+- [libcurl](http://php.net/manual/en/curl.requirements.php) jika Anda berencana menggunakan pustaka HTTP\CURLRequest
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+Selain itu, pastikan ekstensi berikut ini diaktifkan di PHP Anda:
 
-- json (enabled by default - don't turn it off)
+- json (diaktifkan secara default - jangan matikan)
 - [mbstring](http://php.net/manual/en/mbstring.installation.php)
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
-- xml (enabled by default - don't turn it off)
+- xml (diaktifkan secara default - jangan matikan)
+
+## Kontribusi
+Jika Anda ingin berkontribusi pada proyek ini, silakan fork repositori ini dan buat pull request dengan perubahan yang Anda buat. Kami sangat menghargai kontribusi dari komunitas.
+
+## Lisensi
+Koperasi Mitra dilisensikan di bawah [MIT License](https://opensource.org/licenses/MIT). Anda bebas untuk menggunakan, menyalin, memodifikasi, dan mendistribusikan kode sumber ini dengan syarat mencantumkan lisensi ini dalam setiap salinan atau bagian dari perangkat lunak ini.
